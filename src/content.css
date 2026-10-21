@@ -1,0 +1,8 @@
+#repo-vetter-pill {
+  position: fixed;
+  right: 18px;
+  bottom: 18px;
+  z-index: 99999;
+}
+#repo-vetter-pill .gc-panel { width: 320px; }
+#repo-vetter-pill .gc-launch { padding: 8px 14px; }

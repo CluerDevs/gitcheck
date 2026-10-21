@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>GitCheck Trending</title>
+  <link rel="stylesheet" href="gc.css">
+  <link rel="stylesheet" href="trending.css">
+</head>
+<body>
+  <main class="gc-panel wrap">
+    <div class="gc-title"><span>GitCheck // Trending.exe</span><span id="status"></span></div>
+    <div class="gc-body">
+      <h1 class="gc-cursor">Trending repos</h1>
+      <p class="gc-dim intro">New repos picking up stars fast, by genre. GitHub has no official trending API, so this ranks repos created in the chosen window by stars.</p>
+
+      <div id="genres" class="tabs" role="tablist" aria-label="Genre"></div>
+
+      <div class="controls">
+        <label class="gc-dim" for="range">Window</label>
+        <select id="range" class="gc-input"></select>
+        <label class="gc-dim" for="theme">Theme</label>
+        <select id="theme" class="gc-input"></select>
+        <button id="copyAll" class="gc-btn" type="button">Copy list for team</button>
+      </div>
+
+      <div id="list" class="list"></div>
+    </div>
+  </main>
+  <script src="vet.js"></script>
+  <script src="theme.js"></script>
+  <script src="ui.js"></script>
+  <script src="trending.js"></script>
+</body>
+</html>

@@ -1,0 +1,225 @@
+/* GitCheck retro design system. Theme = a set of --gc-* variables selected by [data-theme].
+   Only .gc-* classes are styled here so it's safe to inject into github.com. */
+
+:root,
+[data-theme="terminal"] {
+  --gc-bg: #050a05;
+  --gc-panel: #0a140a;
+  --gc-fg: #39ff6a;
+  --gc-dim: #1f9d3f;
+  --gc-accent: #39ff6a;
+  --gc-good: #39ff6a;
+  --gc-ok: #ffd23f;
+  --gc-bad: #ff4d4d;
+  --gc-warn: #ffd23f;
+  --gc-border: #39ff6a;
+  --gc-bw: 2px;
+  --gc-shadow: #0b5c20;
+  --gc-panel-shadow: 4px 4px 0 var(--gc-shadow);
+  --gc-btn-bg: #39ff6a;
+  --gc-btn-fg: #031003;
+  --gc-btn-shadow: 2px 2px 0 var(--gc-shadow);
+  --gc-title-bg: #39ff6a;
+  --gc-title-fg: #031003;
+  --gc-input-bg: #020702;
+  --gc-input-fg: #39ff6a;
+  --gc-input-border: #1f9d3f;
+  --gc-scan: repeating-linear-gradient(0deg, rgba(0, 0, 0, 0.22) 0 1px, transparent 1px 3px);
+  --gc-glow: 0 0 6px rgba(57, 255, 106, 0.55);
+  --gc-font: ui-monospace, "SF Mono", Menlo, Consolas, "Courier New", monospace;
+}
+
+[data-theme="amber"] {
+  --gc-bg: #0d0700;
+  --gc-panel: #170e00;
+  --gc-fg: #ffb000;
+  --gc-dim: #a86f00;
+  --gc-accent: #ffb000;
+  --gc-good: #ffd24d;
+  --gc-ok: #ff9500;
+  --gc-bad: #ff4d2e;
+  --gc-warn: #ff9500;
+  --gc-border: #ffb000;
+  --gc-shadow: #6b4500;
+  --gc-btn-bg: #ffb000;
+  --gc-btn-fg: #1a0f00;
+  --gc-title-bg: #ffb000;
+  --gc-title-fg: #1a0f00;
+  --gc-input-bg: #0a0500;
+  --gc-input-fg: #ffb000;
+  --gc-input-border: #a86f00;
+  --gc-glow: 0 0 6px rgba(255, 176, 0, 0.5);
+}
+
+[data-theme="win95"] {
+  --gc-bg: #008080;
+  --gc-panel: #c0c0c0;
+  --gc-fg: #000000;
+  --gc-dim: #404040;
+  --gc-accent: #000080;
+  --gc-good: #006400;
+  --gc-ok: #7a5c00;
+  --gc-bad: #b00000;
+  --gc-warn: #7a5c00;
+  --gc-border: #808080;
+  --gc-bw: 0px;
+  --gc-shadow: #000000;
+  --gc-panel-shadow: inset -1px -1px #0a0a0a, inset 1px 1px #ffffff, inset -2px -2px #808080, inset 2px 2px #dfdfdf;
+  --gc-btn-bg: #c0c0c0;
+  --gc-btn-fg: #000000;
+  --gc-btn-shadow: inset -1px -1px #0a0a0a, inset 1px 1px #ffffff, inset -2px -2px #808080, inset 2px 2px #dfdfdf;
+  --gc-title-bg: linear-gradient(90deg, #000080, #1084d0);
+  --gc-title-fg: #ffffff;
+  --gc-input-bg: #ffffff;
+  --gc-input-fg: #000000;
+  --gc-input-border: #808080;
+  --gc-scan: none;
+  --gc-glow: none;
+  --gc-font: "MS Sans Serif", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+[data-theme="synthwave"] {
+  --gc-bg: #0e0021;
+  --gc-panel: #1c0540;
+  --gc-fg: #f4e9ff;
+  --gc-dim: #a98bd6;
+  --gc-accent: #ff2e97;
+  --gc-good: #00f0ff;
+  --gc-ok: #ffe14d;
+  --gc-bad: #ff5c5c;
+  --gc-warn: #ffe14d;
+  --gc-border: #ff2e97;
+  --gc-shadow: #00f0ff;
+  --gc-btn-bg: #00f0ff;
+  --gc-btn-fg: #12002b;
+  --gc-title-bg: linear-gradient(90deg, #ff2e97, #7a2cff);
+  --gc-title-fg: #ffffff;
+  --gc-input-bg: #12002b;
+  --gc-input-fg: #f4e9ff;
+  --gc-input-border: #7a2cff;
+  --gc-scan: none;
+  --gc-glow: 0 0 8px rgba(255, 46, 151, 0.55);
+}
+
+[data-theme="gameboy"] {
+  --gc-bg: #0f380f;
+  --gc-panel: #9bbc0f;
+  --gc-fg: #0f380f;
+  --gc-dim: #306230;
+  --gc-accent: #0f380f;
+  --gc-good: #0f380f;
+  --gc-ok: #306230;
+  --gc-bad: #0f380f;
+  --gc-warn: #0f380f;
+  --gc-border: #0f380f;
+  --gc-shadow: #306230;
+  --gc-btn-bg: #306230;
+  --gc-btn-fg: #9bbc0f;
+  --gc-title-bg: #0f380f;
+  --gc-title-fg: #9bbc0f;
+  --gc-input-bg: #8bac0f;
+  --gc-input-fg: #0f380f;
+  --gc-input-border: #306230;
+  --gc-scan: none;
+  --gc-glow: none;
+}
+
+.gc-panel {
+  box-sizing: border-box;
+  background: var(--gc-scan), var(--gc-panel);
+  color: var(--gc-fg);
+  border: var(--gc-bw) solid var(--gc-border);
+  box-shadow: var(--gc-panel-shadow);
+  font: 13px/1.45 var(--gc-font);
+  text-shadow: var(--gc-glow);
+  text-align: left;
+}
+.gc-panel *, .gc-panel *::before, .gc-panel *::after { box-sizing: border-box; }
+
+.gc-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 3px 6px;
+  background: var(--gc-title-bg);
+  color: var(--gc-title-fg);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-shadow: none;
+}
+.gc-body { padding: 12px; }
+
+.gc-btn {
+  display: inline-block;
+  background: var(--gc-btn-bg);
+  color: var(--gc-btn-fg);
+  border: var(--gc-bw) solid var(--gc-border);
+  box-shadow: var(--gc-btn-shadow);
+  font: inherit;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  text-shadow: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  text-decoration: none;
+}
+.gc-btn:hover { filter: brightness(1.12); }
+.gc-btn:active { transform: translate(1px, 1px); }
+.gc-btn[disabled] { opacity: 0.5; cursor: wait; }
+.gc-btn.gc-sm { padding: 2px 7px; font-size: 11px; }
+.gc-btn.gc-block { display: block; width: 100%; margin-top: 10px; }
+
+.gc-x {
+  background: var(--gc-btn-bg);
+  color: var(--gc-btn-fg);
+  border: 0;
+  box-shadow: var(--gc-btn-shadow);
+  font: inherit;
+  font-weight: 700;
+  line-height: 1;
+  width: 18px;
+  height: 18px;
+  padding: 0;
+  cursor: pointer;
+}
+
+.gc-input {
+  background: var(--gc-input-bg);
+  color: var(--gc-input-fg);
+  border: 2px solid var(--gc-input-border);
+  font: inherit;
+  padding: 5px 8px;
+  min-width: 0;
+  text-shadow: none;
+  border-radius: 0;
+}
+.gc-input:focus { outline: 2px dashed var(--gc-accent); outline-offset: 1px; }
+
+.gc-report { display: grid; grid-template-columns: auto 1fr; gap: 4px 12px; align-items: center; }
+.gc-scorebox { display: inline-flex; align-items: baseline; gap: 2px; border: 2px solid currentColor; padding: 4px 10px; }
+.gc-big { font-size: 30px; font-weight: 700; line-height: 1; }
+.gc-of { font-size: 11px; opacity: 0.8; }
+.gc-name { font-weight: 700; word-break: break-all; }
+.gc-verdict { text-transform: uppercase; letter-spacing: 0.08em; font-size: 12px; }
+.gc-bar { grid-column: 1 / -1; height: 14px; margin: 6px 0; padding: 2px; border: 2px solid currentColor; }
+.gc-bar > span { display: block; height: 100%; background: repeating-linear-gradient(90deg, currentColor 0 6px, transparent 6px 8px); }
+.gc-list { grid-column: 1 / -1; list-style: none; margin: 4px 0 0; padding: 0; max-height: 230px; overflow: auto; }
+.gc-list li { padding: 2px 0; display: flex; gap: 6px; }
+.gc-list .gc-tag { flex: none; font-weight: 700; }
+.gc-list .gc-good { color: var(--gc-good); }
+.gc-list .gc-flag { color: var(--gc-warn); }
+
+.gc-good { color: var(--gc-good); }
+.gc-ok { color: var(--gc-ok); }
+.gc-bad { color: var(--gc-bad); }
+.gc-dim { color: var(--gc-dim); }
+.gc-err { color: var(--gc-bad); }
+.gc-link { color: var(--gc-accent); }
+
+.gc-cursor::after { content: "█"; margin-left: 2px; animation: gc-blink 1s steps(2) infinite; }
+@keyframes gc-blink { 50% { opacity: 0; } }
+@media (prefers-reduced-motion: reduce) { .gc-cursor::after { animation: none; } }

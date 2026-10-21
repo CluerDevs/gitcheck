@@ -1,0 +1,30 @@
+{
+  "manifest_version": 3,
+  "name": "GitCheck",
+  "version": "0.2.0",
+  "description": "Check any GitHub repo in seconds: health, trust, license and risk flags, plus trending repos by genre.",
+  "permissions": ["storage", "activeTab", "clipboardWrite"],
+  "host_permissions": ["https://api.github.com/*"],
+  "icons": {
+    "16": "icons/icon16.png",
+    "32": "icons/icon32.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "action": {
+    "default_title": "GitCheck",
+    "default_popup": "src/popup.html",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "32": "icons/icon32.png"
+    }
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://github.com/*"],
+      "js": ["src/vet.js", "src/theme.js", "src/ui.js", "src/content.js"],
+      "css": ["src/gc.css", "src/content.css"],
+      "run_at": "document_idle"
+    }
+  ]
+}

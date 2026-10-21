@@ -1,0 +1,10 @@
+html { background: var(--gc-bg); }
+body { width: 360px; margin: 0; padding: 10px 14px 14px 10px; background: var(--gc-bg); }
+.row { display: flex; gap: 6px; align-items: center; }
+.row .gc-input { flex: 1; }
+#out { margin: 12px 0 0; }
+.prefs { margin-top: 12px; }
+.prefs .gc-input { flex: 0 0 auto; }
+details { margin-top: 12px; }
+summary { cursor: pointer; margin-bottom: 6px; }
+details label { display: block; margin: 6px 0 4px; }

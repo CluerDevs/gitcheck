@@ -1,0 +1,38 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>GitCheck</title>
+  <link rel="stylesheet" href="gc.css">
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="gc-panel">
+    <div class="gc-title"><span>GitCheck.exe</span><span>v0.2</span></div>
+    <div class="gc-body">
+      <form id="form" class="row">
+        <input id="url" class="gc-input" placeholder="owner/repo or github URL" autocomplete="off">
+        <button type="submit" class="gc-btn">Check</button>
+      </form>
+      <div id="out"></div>
+      <button id="trending" class="gc-btn gc-block">★ Trending repos</button>
+      <div class="row prefs">
+        <label class="gc-dim" for="theme">Theme</label>
+        <select id="theme" class="gc-input"></select>
+      </div>
+      <details>
+        <summary class="gc-dim">Settings</summary>
+        <label class="gc-dim" for="token">GitHub token (optional, 5,000 req/hr)</label>
+        <div class="row">
+          <input id="token" class="gc-input" type="password" placeholder="ghp_…">
+          <button id="save" type="button" class="gc-btn">Save</button>
+        </div>
+      </details>
+    </div>
+  </div>
+  <script src="vet.js"></script>
+  <script src="theme.js"></script>
+  <script src="ui.js"></script>
+  <script src="popup.js"></script>
+</body>
+</html>
